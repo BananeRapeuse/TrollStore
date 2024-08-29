@@ -7,7 +7,7 @@ INSTALL_TARGET_PROCESSES = TrollStorePersistenceHelper
 ifdef CUSTOM_ARCHS
 ARCHS = $(CUSTOM_ARCHS)
 else
-ARCHS = arm64
+ARCHS = arm64e
 endif
 
 ifneq ($(LEGACY_CT_BUG),1)
