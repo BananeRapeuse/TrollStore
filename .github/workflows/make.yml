@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Build Failbreak
+    name: Build TrollHelper
     runs-on: macos-14
 
     steps:
@@ -18,7 +18,13 @@ jobs:
         with:
           submodules: true
 
-      - name: Install Theos
+      - name: Install/update Brew
+        run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+      - name: Install libarchive from brew
+        run: brew install libarchive
+        
+      - name: Install Theos roothide
         run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/roothide/theos/master/bin/install-theos)"
 
       - name: Setup Environment
